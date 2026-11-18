@@ -6,249 +6,184 @@
 <title>High-Cycle Fatigue of Glass Fibre/Epoxy Composites | Mahdi Tayyebati</title>
 <meta name="description" content="A plain-language summary of the PhD thesis High-Cycle Fatigue of Glass Fibre/Epoxy Composites by Mahdi Tayyebati, Technical University of Denmark.">
 <meta name="author" content="Mahdi Tayyebati">
+<meta name="theme-color" content="#990000">
 <meta property="og:type" content="article">
 <meta property="og:title" content="High-Cycle Fatigue of Glass Fibre/Epoxy Composites">
 <meta property="og:description" content="A plain-language summary of my PhD thesis at the Technical University of Denmark. PhD defence on 10 December 2026.">
 <meta property="og:url" content="https://mahditbt.github.io/phd-summary/">
 <meta property="og:image" content="https://mahditbt.github.io/phd-summary/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M15 31h2l-.4-17h-1.2z' fill='%236E8094'/%3E%3Cg fill='%236E8094'%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z'/%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z' transform='rotate(120 16 13)'/%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z' transform='rotate(240 16 13)'/%3E%3C/g%3E%3Ccircle cx='16' cy='13' r='1.6' fill='%231D2733'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M14.9 31h2.2l-.5-17h-1.2z' fill='%23990000'/%3E%3Cg fill='%23990000'%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z'/%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z' transform='rotate(120 16 13)'/%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z' transform='rotate(240 16 13)'/%3E%3C/g%3E%3Ccircle cx='16' cy='13' r='1.7' fill='%23262626'/%3E%3C/svg%3E">
 <style>
 :root {
-  /* Sky-and-sea page for a wind-energy thesis: slate ink, sea blue for links, heat red only where something gets hot. */
-  --ink: #1D2733;
-  --muted: #586373;
-  --sea: #0E6E8C;
-  --heat: #B3261E;
-  --line: #E1E7ED;
-  --soft: #F3F7FA;
-  --font: "Lato", "Helvetica Neue", Arial, sans-serif;
+  /* The colours of the animations (the defence deck's palette) and DTU red for the frame of the page. */
+  --dtu: #990000;
+  --ink: #262626;
+  --grey: #595959;
+  --muted: #8C8C8C;
+  --rule: #D9D9D9;
+  --panel: #F4F4F4;
+  --navy: #171748;
+  --font: Arial, "Liberation Sans", "Helvetica Neue", Helvetica, sans-serif;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; font: 400 17px/1.65 var(--font); color: var(--ink); background: #fff; }
-a { color: var(--sea); text-underline-offset: .15em; }
-a:focus-visible, .btn:focus-visible { outline: 3px solid #7FB8CC; outline-offset: 2px; }
+body { margin: 0; font: 400 17px/1.62 var(--font); color: var(--ink); background: #fff; }
+a { color: var(--navy); text-decoration-thickness: 1px; text-underline-offset: .16em; }
+a:hover { color: var(--dtu); }
+a:focus-visible { outline: 2px solid var(--dtu); outline-offset: 2px; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-.hero { background: linear-gradient(#E4F0F8, #F8FBFD 70%); padding-top: 52px; }
-.hero h1 { font-weight: 900; font-size: clamp(2.05rem, 1.25rem + 3.3vw, 3.35rem); line-height: 1.06; letter-spacing: -.012em; margin: 0 0 14px; max-width: 17ch; text-wrap: balance; }
-.lede { font-size: 1.2rem; line-height: 1.5; color: var(--muted); margin: 0 0 22px; max-width: 42ch; }
-.byline { margin: 0; font-weight: 700; font-size: 1.08rem; }
-.affil { margin: 2px 0 22px; color: var(--muted); font-size: .97rem; }
-.links { display: flex; flex-wrap: wrap; gap: 10px; }
-.btn { display: inline-flex; align-items: center; gap: 7px; padding: 8px 16px 8px 13px; border-radius: 999px; background: var(--ink); color: #fff; text-decoration: none; font-weight: 700; font-size: .95rem; line-height: 1.2; }
-.btn:hover { background: var(--sea); }
-.btn.ghost { background: rgba(255,255,255,.6); color: var(--ink); box-shadow: inset 0 0 0 1.5px var(--ink); }
-.btn.ghost:hover { background: #fff; }
-.ico { width: 16px; height: 16px; flex: none; }
-.farm { display: block; width: 100%; height: auto; margin-top: 30px; }
-.counter { font-size: .92rem; color: var(--muted); margin: 0; padding: 12px 0 0; }
-.counter b { color: var(--ink); font-variant-numeric: tabular-nums; }
-section.wrap { padding: 64px 20px 0; }
-h2 { font-weight: 900; font-size: clamp(1.55rem, 1.2rem + 1.3vw, 2.05rem); line-height: 1.18; margin: 0 0 14px; text-wrap: balance; }
-p { margin: 0 0 14px; max-width: 64ch; }
-.split { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: 44px; align-items: center; }
+.bar { background: var(--dtu); color: #fff; font-size: .86rem; letter-spacing: .01em; }
+.bar .wrap { padding-top: 11px; padding-bottom: 11px; }
+header.title { padding: 46px 0 6px; }
+h1 { font-size: clamp(2rem, 1.3rem + 2.9vw, 3.05rem); line-height: 1.1; font-weight: 700; letter-spacing: -.01em;
+     margin: 0 0 14px; }
+@media (min-width: 761px) { h1 .nw { white-space: nowrap; } }
+.lede { font-size: 1.18rem; line-height: 1.5; color: var(--grey); margin: 0 0 22px; max-width: 46ch; }
+.author { margin: 0; padding-left: 14px; border-left: 3px solid var(--dtu); line-height: 1.5; }
+.author b { font-size: 1.06rem; }
+.author span { color: var(--grey); font-size: .95rem; }
+.hero { max-width: 1040px; margin: 34px auto 0; padding: 0 20px; }
+section.wrap { padding-top: 62px; }
+h2 { font-size: clamp(1.45rem, 1.15rem + 1.1vw, 1.9rem); line-height: 1.2; font-weight: 700; margin: 0 0 14px; }
+h2 .n { color: var(--dtu); margin-right: .45em; }
+h3 { font-size: 1.14rem; font-weight: 700; margin: 0 0 6px; }
+p { margin: 0 0 14px; max-width: 66ch; }
 figure { margin: 0; }
-figcaption { font-size: .93rem; line-height: 1.5; color: var(--muted); margin-top: 10px; max-width: 70ch; }
-img, svg { max-width: 100%; }
 picture { display: block; }
-.gif { display: block; width: 100%; max-width: 100%; height: auto; }
-.wide { margin-top: 38px; }
-.duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; margin-top: 26px; }
-.duo figure { display: grid; justify-items: center; text-align: center; }
-.duo .fig { height: 210px; width: auto; max-width: 100%; }
-.studies { margin-top: 8px; }
-.study { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 34px; align-items: center; padding: 24px 0; border-top: 1px solid var(--line); }
+.gif { display: block; width: 100%; height: auto; }
+figcaption { font-size: .9rem; line-height: 1.5; color: var(--grey); margin-top: 8px; max-width: 74ch; }
+figcaption b { color: var(--ink); }
+.split { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 40px; align-items: center; }
 .split > *, .duo > *, .study > * { min-width: 0; }
-.study:last-child { border-bottom: 1px solid var(--line); }
-.study h3 { margin: 0 0 4px; font-size: 1.16rem; font-weight: 900; }
+.wide { margin-top: 30px; }
+.duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; margin-top: 22px; }
+.study { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 34px; align-items: center;
+         padding: 22px 0; border-top: 1px solid var(--rule); }
+.study:last-child { border-bottom: 1px solid var(--rule); }
 .study p { margin: 0; }
-.icon { width: 100%; height: auto; }
-.band { background: var(--soft); margin-top: 64px; padding: 50px 0 46px; }
-.band section.wrap, section.wrap.flush { padding-top: 0; }
-dl { display: grid; grid-template-columns: 190px 1fr; gap: 10px 26px; margin: 6px 0 0; }
+.study figcaption { margin-top: 2px; }
+.defence { background: var(--panel); margin-top: 64px; padding: 4px 0 48px; border-top: 3px solid var(--dtu); }
+dl { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 9px 24px; margin: 4px 0 0; }
 dt { font-weight: 700; }
 dd { margin: 0; }
-.papers { margin: 6px 0 0; padding-left: 1.2em; max-width: 72ch; }
-.papers li { margin-bottom: 10px; }
-.papers .ref { color: var(--muted); }
-footer { padding: 36px 0 44px; color: var(--muted); font-size: .9rem; }
+.papers { margin: 4px 0 0; padding-left: 1.3em; max-width: 76ch; }
+.papers li { margin-bottom: 12px; padding-left: .2em; }
+.papers .ref { display: block; color: var(--grey); font-size: .93rem; }
+footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 22px 0 40px; color: var(--grey);
+         font-size: .88rem; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
 @media (max-width: 760px) {
   body { font-size: 16.5px; }
-  .hero { padding-top: 34px; }
-  .split, .duo { grid-template-columns: minmax(0, 1fr); gap: 22px; }
-  .study { grid-template-columns: minmax(0, 1fr); gap: 10px; }
-  .study .icon { max-width: 290px; }
-  .wide .gif { max-width: 340px; margin: 0 auto; }
-  dl { grid-template-columns: 1fr; gap: 0; }
+  header.title { padding-top: 32px; }
+  .split, .duo { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .study { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .study figure { max-width: 420px; }
+  dl { grid-template-columns: minmax(0, 1fr); gap: 0; }
   dd { margin-bottom: 12px; }
-  section.wrap { padding-top: 48px; }
+  section.wrap { padding-top: 46px; }
 }
-
-/* motion */
-.act { animation: up .6s ease-in-out infinite alternate; }
-.act-fast { animation: up .16s ease-in-out infinite alternate; }
-@keyframes up { to { transform: translateY(1.6px); } }
-.lab .day { animation-duration: 7s; animation-iteration-count: infinite; animation-timing-function: linear; }
-.mercury { transform-box: fill-box; transform-origin: 50% 100%; animation: merc 6s ease-in-out infinite; }
-@keyframes merc { 0% { transform: scaleY(.35); } 70%, 88% { transform: scaleY(1); } 100% { transform: scaleY(.35); } }
-.fig .glow { animation: glow 6s ease-in-out infinite; }
-.icon .glow { animation: pulse 2.4s ease-in-out infinite alternate; }
-@keyframes glow { 0% { opacity: .2; } 70%, 88% { opacity: 1; } 100% { opacity: .2; } }
-@keyframes pulse { from { opacity: .55; } to { opacity: 1; } }
-.wisp { opacity: 0; animation: wisp 1.8s ease-out infinite; }
-@keyframes wisp { 0% { opacity: 0; transform: translateY(5px); } 30% { opacity: .85; } 100% { opacity: 0; transform: translateY(-6px); } }
-.scroll-fast { animation: scroll .45s linear infinite; }
-.scroll-slow { animation: scroll 1.6s linear infinite; }
-@keyframes scroll { to { transform: translateX(var(--lam)); } }
-.vib-slow { animation: vib 1.2s ease-in-out infinite alternate; }
-.vib-fast { animation: vib .17s ease-in-out infinite alternate; }
-@keyframes vib { to { transform: translateY(.9px); } }
-.stretch { transform-box: fill-box; transform-origin: center; animation: stretch 1.1s ease-in-out infinite alternate; }
-@keyframes stretch { to { transform: scaleX(1.035); } }
-.pull-l { animation: pl 1.1s ease-in-out infinite alternate; }
-.pull-r { animation: pr 1.1s ease-in-out infinite alternate; }
-@keyframes pl { to { transform: translateX(-2px); } }
-@keyframes pr { to { transform: translateX(2px); } }
-.air { animation: air .6s linear infinite; }
-@keyframes air { to { stroke-dashoffset: -7; } }
-.node { animation: node 3s ease-in-out infinite; }
-@keyframes node { 0%, 100% { fill: #fff; } 15%, 35% { fill: #A9BEEA; } }
-.draw { stroke-dasharray: 100; animation: draw 6s ease-in-out infinite; }
-@keyframes draw { 0%, 10% { stroke-dashoffset: 100; } 45%, 90% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 100; } }
-.icon .uband { animation: bandf 6s ease-in-out infinite; }
-@keyframes bandf { 0%, 30% { opacity: 0; } 50%, 90% { opacity: 1; } 100% { opacity: 0; } }
-.swell { animation: swell 7s ease-in-out infinite alternate; }
-.swell.s1 { animation-duration: 9s; }
-.swell.s2 { animation-duration: 11s; }
-@keyframes swell { to { transform: translateX(26px); } }
-@keyframes d0{0%,4%{fill:#D6DBE4}5.5%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d1{0%,10.5%{fill:#D6DBE4}12%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d2{0%,17%{fill:#D6DBE4}18.5%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d3{0%,23.5%{fill:#D6DBE4}25%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d4{0%,30%{fill:#D6DBE4}31.5%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d5{0%,36.5%{fill:#D6DBE4}38%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d6{0%,43%{fill:#D6DBE4}44.5%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d7{0%,49.5%{fill:#D6DBE4}51%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d8{0%,56%{fill:#D6DBE4}57.5%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d9{0%,62.5%{fill:#D6DBE4}64%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d10{0%,69%{fill:#D6DBE4}70.5%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@keyframes d11{0%,75.5%{fill:#D6DBE4}77%,90%{fill:#7C8799}96%,100%{fill:#D6DBE4}}
-@media (prefers-reduced-motion: reduce) {
-  svg * { animation: none !important; }
-  .wisp { opacity: .6; }
+@media (max-width: 600px) {
+  /* the pictures run edge to edge on a phone: they are white-backed, so only the text inside them grows */
+  .bleed { margin-left: -20px; margin-right: -20px; }
+  .bleed figcaption { padding: 0 20px; }
+  .hero { padding: 0; margin-top: 26px; }
 }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><pattern id="hx" width="1.84" height="1.84" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 .92H1.84M.92 0V1.84" stroke="#AEB6C6" stroke-width=".35"/></pattern><pattern id="hw" width="1.84" height="1.84" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 .92H1.84M.92 0V1.84" stroke="#fff" stroke-opacity=".55" stroke-width=".4"/></pattern></defs></svg>
-<header class="hero">
+<div class="bar"><div class="wrap">PhD thesis &middot; Technical University of Denmark</div></div>
+<header class="title">
   <div class="wrap">
-    <h1>High-Cycle Fatigue of Glass Fibre/Epoxy Composites</h1>
-    <p class="lede">A plain-language summary of my PhD thesis at the Technical University of Denmark.</p>
-    <p class="byline">Mahdi Tayyebati</p>
-    <p class="affil">DTU Wind and Energy Systems &middot; DTU Civil and Mechanical Engineering</p>
-    <nav class="links" aria-label="Papers and defence">
-      <a class="btn" href="https://doi.org/10.1016/j.euromechsol.2025.105641"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13M6.2 8.5h4.6M6.2 11h4.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Paper I</a>
-      <a class="btn" href="https://doi.org/10.1016/j.euromechsol.2026.106312"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13M6.2 8.5h4.6M6.2 11h4.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Paper II</a>
-      <a class="btn" href="https://doi.org/10.1016/j.engfracmech.2026.112700"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9.5 1.5V5H13M6.2 8.5h4.6M6.2 11h4.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Paper III</a>
-      <a class="btn ghost" href="#defence"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="11" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>PhD defence, 10 Dec 2026</a>
-    </nav>
+    <h1>High-Cycle Fatigue of <span class="nw">Glass Fibre/Epoxy Composites</span></h1>
+    <p class="lede">A plain-language summary of my PhD thesis.</p>
+    <p class="author"><b>Mahdi Tayyebati</b><br><span>DTU Wind and Energy Systems &middot; DTU Civil and Mechanical Engineering</span></p>
   </div>
-  <svg class="farm" viewBox="0 0 1200 250" role="img" aria-label="Animated drawing of an offshore wind farm with turning rotors" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4F0F8"/><stop offset="1" stop-color="#F8FBFD"/></linearGradient><linearGradient id="seaG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D5E5EF"/><stop offset="1" stop-color="#EEF5F9"/></linearGradient></defs><rect width="1200" height="214" fill="url(#sky)"/><rect y="214" width="1200" height="36" fill="url(#seaG)"/><line x1="0" y1="214" x2="1200" y2="214" stroke="#BFD3E0" stroke-width="1"/><line class="swell s0" x1="70" y1="228" x2="130" y2="228" stroke="#C9DCE8" stroke-width="1.6" stroke-linecap="round"/><line class="swell s1" x1="260" y1="236" x2="340" y2="236" stroke="#C9DCE8" stroke-width="1.6" stroke-linecap="round"/><line class="swell s2" x1="480" y1="226" x2="530" y2="226" stroke="#C9DCE8" stroke-width="1.6" stroke-linecap="round"/><line class="swell s0" x1="700" y1="240" x2="790" y2="240" stroke="#C9DCE8" stroke-width="1.6" stroke-linecap="round"/><line class="swell s1" x1="880" y1="230" x2="940" y2="230" stroke="#C9DCE8" stroke-width="1.6" stroke-linecap="round"/><line class="swell s2" x1="1060" y1="238" x2="1130" y2="238" stroke="#C9DCE8" stroke-width="1.6" stroke-linecap="round"/><polygon points="108.24,214 111.76,214 110.84,151 109.16,151" fill="#C3CFDA"/><g transform="translate(110,151)"><g><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(20) scale(0.65)" fill="#C3CFDA"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(140) scale(0.65)" fill="#C3CFDA"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(260) scale(0.65)" fill="#C3CFDA"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6.6s" repeatCount="indefinite"/></g><circle r="1.76" fill="#C3CFDA"/><circle r="0.67" fill="#F8FBFD"/></g><polygon points="287.56,214 292.44,214 291.16,127 288.84,127" fill="#AEBCCA"/><g transform="translate(290,127)"><g><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(75) scale(0.9)" fill="#AEBCCA"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(195) scale(0.9)" fill="#AEBCCA"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(315) scale(0.9)" fill="#AEBCCA"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5.9s" repeatCount="indefinite"/></g><circle r="2.44" fill="#AEBCCA"/><circle r="0.93" fill="#F8FBFD"/></g><polygon points="517.9,214 522.1,214 521,139 519,139" fill="#B8C5D1"/><g transform="translate(520,139)"><g><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(40) scale(0.78)" fill="#B8C5D1"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(160) scale(0.78)" fill="#B8C5D1"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(280) scale(0.78)" fill="#B8C5D1"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6.3s" repeatCount="indefinite"/></g><circle r="2.1" fill="#B8C5D1"/><circle r="0.8" fill="#F8FBFD"/></g><polygon points="716.98,214 723.02,214 721.44,106 718.56,106" fill="#97A8B8"/><g transform="translate(720,106)"><g><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(95) scale(1.12)" fill="#97A8B8"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(215) scale(1.12)" fill="#97A8B8"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(335) scale(1.12)" fill="#97A8B8"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5.5s" repeatCount="indefinite"/></g><circle r="3.02" fill="#97A8B8"/><circle r="1.15" fill="#F8FBFD"/></g><polygon points="1077.98,214 1082.02,214 1080.96,142 1079.04,142" fill="#BAC7D3"/><g transform="translate(1080,142)"><g><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(10) scale(0.74)" fill="#BAC7D3"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(130) scale(0.74)" fill="#BAC7D3"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(250) scale(0.74)" fill="#BAC7D3"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6.9s" repeatCount="indefinite"/></g><circle r="2.02" fill="#BAC7D3"/><circle r="0.77" fill="#F8FBFD"/></g><polygon points="895.38,214 904.62,214 902.2,49 897.8,49" fill="#6E8094"/><g transform="translate(900,49)"><g><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(0) scale(1.71)" fill="#6E8094"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(120) scale(1.71)" fill="#6E8094"/><path d="M -1.05,-3.6 C -1.5,-13 -0.95,-25 0,-34.5 C 1.15,-27.5 3.35,-16.5 3.45,-10.8 C 3.55,-7.2 2.3,-4.8 1.45,-3.6 Z" transform="rotate(240) scale(1.71)" fill="#6E8094"/><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5.0s" repeatCount="indefinite"/></g><circle r="4.62" fill="#6E8094"/><circle r="1.76" fill="#F8FBFD"/></g></svg>
+  <figure class="hero">
+    <picture><source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="hero-tall.png" width="460" height="440"><source media="(prefers-reduced-motion: reduce)" srcset="hero-wide.png" width="1000" height="270"><source media="(max-width: 600px)" srcset="hero-tall.gif" width="460" height="440"><img class="gif" src="hero-wide.gif" width="1000" height="270" decoding="async" alt="From the turbine to the material: a wind turbine whose rotor turns, the cross-section of a blade, the layers of glass-fibre fabric in the laminate, and glass fibres held together by epoxy."></picture>
+  </figure>
 </header>
-<div class="wrap"><p class="counter">Each turn of a rotor is one load cycle for its blades. Turns of the nearest rotor since you opened this page: <b id="turns">0</b></p></div>
 
 <main>
   <section class="wrap" aria-labelledby="h-blade">
     <div class="split">
       <div>
-        <h2 id="h-blade">A blade bends a hundred million times</h2>
+        <h2 id="h-blade"><span class="n">1</span>A blade bends a hundred million times</h2>
         <p>A wind-turbine blade is made of a composite: thin glass fibres held together by epoxy. Every turn of the rotor bends the blade a little, and over a working life of around 25 years that adds up to somewhere between millions and billions of load cycles. Each one is far too small to break anything. Together they slowly wear the material down. Engineers call this fatigue.</p>
       </div>
-      <figure>
-        <img class="gif" src="turbine-load-cycles.gif" width="560" height="410" loading="lazy" alt="Animation: as the rotor turns, the load at the blade root goes up and down once per turn, and the cycle count climbs towards a hundred million over 25 years.">
-        <figcaption>One turn of the rotor, one load cycle at the root of the blade.</figcaption>
+      <figure class="bleed">
+        <picture><source media="(prefers-reduced-motion: reduce)" srcset="turbine-load-cycles.png" width="540" height="396"><img class="gif" src="turbine-load-cycles.gif" width="540" height="396" decoding="async" alt="Animation: as the rotor turns, the weight of one blade loads its root up and down once per turn; the load at the blade root traces a wave, and the cycle count runs from 0 to about a hundred million over 25 years."></picture>
+        <figcaption><b>Figure 1.</b> One turn of the rotor, one load cycle at the root of the blade.</figcaption>
       </figure>
     </div>
-    <figure class="wide">
-      <picture>
-        <source media="(max-width: 600px)" srcset="fatigue-damage-phone.gif" width="340" height="472">
-        <img class="gif" src="fatigue-damage.gif" width="900" height="353" loading="lazy" alt="Animation: cracks form along the fibres of a laminate under repeated loading, the layers separate, the stiffness drops, and the specimen finally breaks.">
-      </picture>
-      <figcaption>Inside the laminate, fatigue starts with tiny cracks along the fibres. The layers then begin to separate, the material gets softer, and at some point the specimen breaks.</figcaption>
+    <figure class="wide bleed">
+      <picture><source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="fatigue-damage-phone.png" width="460" height="682"><source media="(prefers-reduced-motion: reduce)" srcset="fatigue-damage.png" width="1000" height="392"><source media="(max-width: 600px)" srcset="fatigue-damage-phone.gif" width="460" height="682"><img class="gif" src="fatigue-damage.gif" width="1000" height="392" loading="lazy" decoding="async" alt="Animation: a glass-fibre/epoxy laminate under repeated tension. Cracks form along the fibres of each layer, open the interface between fibre and epoxy, the layers separate, and the specimen breaks. Beside it, its stiffness falls in three stages."></picture>
+      <figcaption><b>Figure 2.</b> Inside the laminate, fatigue starts with tiny cracks along the fibres. The layers then begin to separate, the material gets softer, and at some point the specimen breaks.</figcaption>
     </figure>
   </section>
 
   <section class="wrap" aria-labelledby="h-time">
-    <h2 id="h-time">Testing takes time</h2>
+    <h2 id="h-time"><span class="n">2</span>Testing takes time</h2>
     <p>Before a material goes into a blade, it has to be fatigue tested in the lab, and pushing a specimen through that many cycles takes weeks or months. The obvious shortcut is to load it faster. But epoxy turns part of every cycle into heat, so a fast test also warms the specimen up, and a warm specimen does not behave like a cool one. Can a fast test still be trusted?</p>
-    <div class="duo">
-      <figure><svg class="fig lab" viewBox="0 0 140 104" role="img" aria-label="A fatigue test machine cycling a specimen while the days on a calendar fill up" xmlns="http://www.w3.org/2000/svg"><rect x="39" y="15" width="4" height="74" fill="#F1F3F7" stroke="#1E2A4A" stroke-width=".7"/><rect x="85" y="15" width="4" height="74" fill="#F1F3F7" stroke="#1E2A4A" stroke-width=".7"/><rect x="33" y="88" width="62" height="10" rx="1.6" fill="#D6DBE4" stroke="#1E2A4A" stroke-width="0.9"/><rect x="33" y="11" width="62" height="9" rx="1.6" fill="#D6DBE4" stroke="#1E2A4A" stroke-width="0.9"/><rect x="59.5" y="20" width="9" height="5" fill="#F1F3F7" stroke="#1E2A4A" stroke-width=".7"/><rect x="60.4" y="32" width="7.2" height="39" fill="#F1F3F7"/><rect x="60.4" y="32" width="7.2" height="39" fill="url(#hx)"/><rect x="60.4" y="32" width="7.2" height="39" fill="none" stroke="#1E2A4A" stroke-width=".7"/><rect x="57.5" y="25" width="13" height="11" rx="1" fill="#A9B1C1" stroke="#1E2A4A" stroke-width="0.9"/><g class="act"><rect x="62" y="76" width="4" height="13" fill="#F1F3F7" stroke="#1E2A4A" stroke-width=".7"/><rect x="57.5" y="65" width="13" height="11" rx="1" fill="#A9B1C1" stroke="#1E2A4A" stroke-width="0.9"/></g><rect x="104.5" y="27" width="27" height="29" rx="2.2" fill="#F4F5F8" stroke="#8C95A8" stroke-width=".7"/><rect x="101" y="31" width="27" height="29" rx="2.2" fill="#fff" stroke="#1E2A4A" stroke-width="0.9"/><path d="M 101,38.5 L 101,33.2 Q 101,31 103.2,31 L 125.8,31 Q 128,31 128,33.2 L 128,38.5 Z" fill="#B3261E" stroke="#1E2A4A" stroke-width="0.9" stroke-linejoin="round"/><line x1="108" y1="28.5" x2="108" y2="34" stroke="#1E2A4A" stroke-width="1.3" stroke-linecap="round"/><line x1="121" y1="28.5" x2="121" y2="34" stroke="#1E2A4A" stroke-width="1.3" stroke-linecap="round"/><rect class="day" style="animation-name:d0" x="104.6" y="42.2" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d1" x="109.9" y="42.2" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d2" x="115.2" y="42.2" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d3" x="120.5" y="42.2" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d4" x="104.6" y="47.6" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d5" x="109.9" y="47.6" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d6" x="115.2" y="47.6" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d7" x="120.5" y="47.6" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d8" x="104.6" y="53" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d9" x="109.9" y="53" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d10" x="115.2" y="53" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/><rect class="day" style="animation-name:d11" x="120.5" y="53" width="3.2" height="3.2" rx=".5" fill="#D6DBE4"/></svg><figcaption>A slow test ties up the machine for weeks.</figcaption></figure>
-      <figure><svg class="fig" viewBox="0 0 120 104" role="img" aria-label="A specimen cycled fast, glowing with heat, while a thermometer rises" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="hg" cx="52" cy="54" r="24" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#D94A43"/><stop offset=".55" stop-color="#EE9C95"/><stop offset="1" stop-color="#FBE4E1"/></radialGradient><clipPath id="cw1"><rect x="37" y="5" width="30" height="14"/></clipPath></defs><g class="scroll-fast" style="--lam:-4.89px"><polyline points="30,12 30.35,10.87 30.7,9.97 31.05,9.47 31.4,9.47 31.75,9.97 32.1,10.87 32.44,12 32.79,13.13 33.14,14.03 33.49,14.53 33.84,14.53 34.19,14.03 34.54,13.13 34.89,12 35.24,10.87 35.59,9.97 35.94,9.47 36.29,9.47 36.63,9.97 36.98,10.87 37.33,12 37.68,13.13 38.03,14.03 38.38,14.53 38.73,14.53 39.08,14.03 39.43,13.13 39.78,12 40.13,10.87 40.48,9.97 40.83,9.47 41.17,9.47 41.52,9.97 41.87,10.87 42.22,12 42.57,13.13 42.92,14.03 43.27,14.53 43.62,14.53 43.97,14.03 44.32,13.13 44.67,12 45.02,10.87 45.37,9.97 45.71,9.47 46.06,9.47 46.41,9.97 46.76,10.87 47.11,12 47.46,13.13 47.81,14.03 48.16,14.53 48.51,14.53 48.86,14.03 49.21,13.13 49.56,12 49.9,10.87 50.25,9.97 50.6,9.47 50.95,9.47 51.3,9.97 51.65,10.87 52,12 52.35,13.13 52.7,14.03 53.05,14.53 53.4,14.53 53.75,14.03 54.1,13.13 54.44,12 54.79,10.87 55.14,9.97 55.49,9.47 55.84,9.47 56.19,9.97 56.54,10.87 56.89,12 57.24,13.13 57.59,14.03 57.94,14.53 58.29,14.53 58.63,14.03 58.98,13.13 59.33,12 59.68,10.87 60.03,9.97 60.38,9.47 60.73,9.47 61.08,9.97 61.43,10.87 61.78,12 62.13,13.13 62.48,14.03 62.83,14.53 63.17,14.53 63.52,14.03 63.87,13.13 64.22,12 64.57,10.87 64.92,9.97 65.27,9.47 65.62,9.47 65.97,9.97 66.32,10.87 66.67,12 67.02,13.13 67.37,14.03 67.71,14.53 68.06,14.53 68.41,14.03 68.76,13.13 69.11,12 69.46,10.87 69.81,9.97 70.16,9.47 70.51,9.47 70.86,9.97 71.21,10.87 71.56,12 71.9,13.13 72.25,14.03 72.6,14.53 72.95,14.53 73.3,14.03 73.65,13.13 74,12" fill="none" stroke="#1E2A4A" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#cw1)"/></g><polyline class="wisp" style="animation-delay:0s" points="38.5,70 39.04,69 39.49,68 39.79,67 39.9,66 39.79,65 39.49,64 39.04,63 38.5,62 37.96,61 37.51,60 37.21,59 37.1,58 37.21,57 37.51,56 37.96,55 38.5,54 39.04,53 39.49,52 39.79,51 39.9,50 39.79,49 39.49,48 39.04,47 38.5,46" fill="none" stroke="#B3261E" stroke-width=".9" stroke-linecap="round"/><polyline class="wisp" style="animation-delay:0.45s" points="33.5,64 34.04,63.08 34.49,62.17 34.79,61.25 34.9,60.33 34.79,59.42 34.49,58.5 34.04,57.58 33.5,56.67 32.96,55.75 32.51,54.83 32.21,53.92 32.1,53 32.21,52.08 32.51,51.17 32.96,50.25 33.5,49.33 34.04,48.42 34.49,47.5 34.79,46.58 34.9,45.67 34.79,44.75 34.49,43.83 34.04,42.92 33.5,42" fill="none" stroke="#B3261E" stroke-width=".9" stroke-linecap="round"/><polyline class="wisp" style="animation-delay:0.9s" points="65.5,70 66.04,69 66.49,68 66.79,67 66.9,66 66.79,65 66.49,64 66.04,63 65.5,62 64.96,61 64.51,60 64.21,59 64.1,58 64.21,57 64.51,56 64.96,55 65.5,54 66.04,53 66.49,52 66.79,51 66.9,50 66.79,49 66.49,48 66.04,47 65.5,46" fill="none" stroke="#B3261E" stroke-width=".9" stroke-linecap="round"/><polyline class="wisp" style="animation-delay:1.35s" points="70.5,64 71.04,63.08 71.49,62.17 71.79,61.25 71.9,60.33 71.79,59.42 71.49,58.5 71.04,57.58 70.5,56.67 69.96,55.75 69.51,54.83 69.21,53.92 69.1,53 69.21,52.08 69.51,51.17 69.96,50.25 70.5,49.33 71.04,48.42 71.49,47.5 71.79,46.58 71.9,45.67 71.79,44.75 71.49,43.83 71.04,42.92 70.5,42" fill="none" stroke="#B3261E" stroke-width=".9" stroke-linecap="round"/><rect x="45" y="33" width="14" height="42" fill="#FBE4E1"/><rect class="glow" x="45" y="33" width="14" height="42" fill="url(#hg)"/><rect x="45" y="33" width="14" height="42" fill="url(#hw)"/><rect x="45" y="33" width="14" height="42" fill="none" stroke="#1E2A4A" stroke-width="0.9"/><rect x="41" y="22" width="22" height="14" rx="1.4" fill="#A9B1C1" stroke="#1E2A4A" stroke-width="0.9"/><g class="act-fast"><rect x="41" y="72" width="22" height="14" rx="1.4" fill="#A9B1C1" stroke="#1E2A4A" stroke-width="0.9"/></g><rect x="81" y="30" width="6" height="40" rx="3" fill="#fff" stroke="#1E2A4A" stroke-width="0.9"/><rect class="mercury" x="82.7" y="38" width="2.6" height="34" rx="1.3" fill="#B3261E"/><circle cx="84" cy="75" r="5.2" fill="#B3261E" stroke="#1E2A4A" stroke-width="0.9"/><line x1="87" y1="36" x2="89.2" y2="36" stroke="#1E2A4A" stroke-width=".6"/><line x1="87" y1="43" x2="89.2" y2="43" stroke="#1E2A4A" stroke-width=".6"/><line x1="87" y1="50" x2="89.2" y2="50" stroke="#1E2A4A" stroke-width=".6"/><line x1="87" y1="57" x2="89.2" y2="57" stroke="#1E2A4A" stroke-width=".6"/></svg><figcaption>Load faster and the specimen heats up.</figcaption></figure>
-    </div>
+    <figure class="bleed">
+      <div class="duo">
+        <picture><source media="(prefers-reduced-motion: reduce)" srcset="test-slow.png" width="487" height="376"><img class="gif" src="test-slow.gif" width="487" height="376" loading="lazy" decoding="async" alt="Animation: a specimen in a test machine is loaded slowly; the load wave is slow and a calendar counts the days up to three weeks."></picture>
+        <picture><source media="(prefers-reduced-motion: reduce)" srcset="test-fast.png" width="487" height="376"><img class="gif" src="test-fast.gif" width="487" height="376" loading="lazy" decoding="async" alt="Animation: the same test run faster; the load wave is faster, the specimen turns warm, heat rises from it and the thermometer climbs."></picture>
+      </div>
+      <figcaption><b>Figure 3.</b> A slow test ties up the machine for weeks. Load faster and the specimen heats up.</figcaption>
+    </figure>
   </section>
 
   <section class="wrap" aria-labelledby="h-did">
-    <h2 id="h-did">What I did</h2>
+    <h2 id="h-did"><span class="n">3</span>What I did</h2>
     <div class="studies">
-      <article class="study"><svg class="icon" viewBox="0 0 137 60" role="img" aria-label="An epoxy specimen pulled back and forth" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="am" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE7AE"/><stop offset="1" stop-color="#EEC45A"/></linearGradient><clipPath id="cw2"><rect x="55" y="4" width="27" height="14"/></clipPath></defs><g class="stretch"><path d="M 16,21 L 38,21 C 44.5,21 46,27 51.5,27 L 85.5,27 C 91,27 92.5,21 99,21 L 121,21 Q 123,21 123,23 L 123,43 Q 123,45 121,45 L 99,45 C 92.5,45 91,39 85.5,39 L 51.5,39 C 46,39 44.5,45 38,45 L 16,45 Q 14,45 14,43 L 14,23 Q 14,21 16,21 Z" fill="url(#am)" stroke="#B07F12" stroke-width="0.9" stroke-linejoin="round"/></g><g class="pull-l"><line x1="11" y1="33" x2="5" y2="33" stroke="#1E2A4A" stroke-width="1" stroke-linecap="round"/><polygon points="2.66,33 6.3,31.26 6.3,34.74" fill="#1E2A4A"/></g><g class="pull-r"><line x1="126" y1="33" x2="132" y2="33" stroke="#1E2A4A" stroke-width="1" stroke-linecap="round"/><polygon points="134.34,33 130.7,34.74 130.7,31.26" fill="#1E2A4A"/></g><g clip-path="url(#cw2)"><g class="scroll-slow" style="--lam:-10.8px"><polyline points="44.2,11 44.97,9.61 45.74,8.5 46.51,7.88 47.29,7.88 48.06,8.5 48.83,9.61 49.6,11 50.37,12.39 51.14,13.5 51.91,14.12 52.69,14.12 53.46,13.5 54.23,12.39 55,11 55.77,9.61 56.54,8.5 57.31,7.88 58.09,7.88 58.86,8.5 59.63,9.61 60.4,11 61.17,12.39 61.94,13.5 62.71,14.12 63.49,14.12 64.26,13.5 65.03,12.39 65.8,11 66.57,9.61 67.34,8.5 68.11,7.88 68.89,7.88 69.66,8.5 70.43,9.61 71.2,11 71.97,12.39 72.74,13.5 73.51,14.12 74.29,14.12 75.06,13.5 75.83,12.39 76.6,11 77.37,9.61 78.14,8.5 78.91,7.88 79.69,7.88 80.46,8.5 81.23,9.61 82,11 82.77,12.39 83.54,13.5 84.31,14.12 85.09,14.12 85.86,13.5 86.63,12.39 87.4,11 88.17,9.61 88.94,8.5 89.71,7.88 90.49,7.88 91.26,8.5 92.03,9.61 92.8,11" fill="none" stroke="#1E2A4A" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/></g></g></svg><div><h3>The epoxy on its own</h3><p>First I took the epoxy without any fibres and loaded it over and over. When I measured it again afterwards, its stiffness and damping had not changed measurably. How the epoxy behaves depends on temperature and loading rate, not on how many cycles it has been through.</p></div></article>
-      <article class="study"><svg class="icon" viewBox="0 0 137 60" role="img" aria-label="Three laminate specimens: cycled slowly, cycled fast and heating up, and cycled fast while cooled by air" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="gb" cx="68.5" cy="35.5" r="14" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#D94A43"/><stop offset=".55" stop-color="#EE9C95"/><stop offset="1" stop-color="#FBE4E1"/></radialGradient><clipPath id="cl0"><rect x="11" y="3" width="18" height="11"/></clipPath><clipPath id="cl1"><rect x="59.5" y="3" width="18" height="11"/></clipPath><clipPath id="cl2"><rect x="108" y="3" width="18" height="11"/></clipPath></defs><g class="vib-slow"><rect x="13.5" y="24" width="13" height="23" fill="#F1F3F7"/><rect x="13.5" y="24" width="13" height="23" fill="url(#hx)"/><rect x="13.5" y="17" width="13" height="7" fill="#D6DBE4" stroke="#1E2A4A" stroke-width=".7"/><rect x="13.5" y="47" width="13" height="7" fill="#D6DBE4" stroke="#1E2A4A" stroke-width=".7"/><rect x="13.5" y="17" width="13" height="37" rx=".8" fill="none" stroke="#1E2A4A" stroke-width="0.9"/></g><g class="vib-fast"><rect x="62.0" y="24" width="13" height="23" fill="#FBE4E1"/><rect class="glow" x="62.0" y="24" width="13" height="23" fill="url(#gb)"/><rect x="62.0" y="24" width="13" height="23" fill="url(#hw)"/><rect x="62.0" y="17" width="13" height="7" fill="#D6DBE4" stroke="#1E2A4A" stroke-width=".7"/><rect x="62.0" y="47" width="13" height="7" fill="#D6DBE4" stroke="#1E2A4A" stroke-width=".7"/><rect x="62.0" y="17" width="13" height="37" rx=".8" fill="none" stroke="#1E2A4A" stroke-width="0.9"/></g><g class="vib-fast"><rect x="110.5" y="24" width="13" height="23" fill="#F1F3F7"/><rect x="110.5" y="24" width="13" height="23" fill="url(#hx)"/><rect x="110.5" y="17" width="13" height="7" fill="#D6DBE4" stroke="#1E2A4A" stroke-width=".7"/><rect x="110.5" y="47" width="13" height="7" fill="#D6DBE4" stroke="#1E2A4A" stroke-width=".7"/><rect x="110.5" y="17" width="13" height="37" rx=".8" fill="none" stroke="#1E2A4A" stroke-width="0.9"/></g><g clip-path="url(#cl0)"><g class="scroll-slow" style="--lam:-12px"><polyline points="-1,8.5 -0.14,7.46 0.71,6.62 1.57,6.16 2.43,6.16 3.29,6.62 4.14,7.46 5,8.5 5.86,9.54 6.71,10.38 7.57,10.84 8.43,10.84 9.29,10.38 10.14,9.54 11,8.5 11.86,7.46 12.71,6.62 13.57,6.16 14.43,6.16 15.29,6.62 16.14,7.46 17,8.5 17.86,9.54 18.71,10.38 19.57,10.84 20.43,10.84 21.29,10.38 22.14,9.54 23,8.5 23.86,7.46 24.71,6.62 25.57,6.16 26.43,6.16 27.29,6.62 28.14,7.46 29,8.5 29.86,9.54 30.71,10.38 31.57,10.84 32.43,10.84 33.29,10.38 34.14,9.54 35,8.5 35.86,7.46 36.71,6.62 37.57,6.16 38.43,6.16 39.29,6.62 40.14,7.46 41,8.5" fill="none" stroke="#1E2A4A" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/></g></g><g clip-path="url(#cl1)"><g class="scroll-fast" style="--lam:-3.6px"><polyline points="55.9,8.5 56.16,7.46 56.41,6.62 56.67,6.16 56.93,6.16 57.19,6.62 57.44,7.46 57.7,8.5 57.96,9.54 58.21,10.38 58.47,10.84 58.73,10.84 58.99,10.38 59.24,9.54 59.5,8.5 59.76,7.46 60.01,6.62 60.27,6.16 60.53,6.16 60.79,6.62 61.04,7.46 61.3,8.5 61.56,9.54 61.81,10.38 62.07,10.84 62.33,10.84 62.59,10.38 62.84,9.54 63.1,8.5 63.36,7.46 63.61,6.62 63.87,6.16 64.13,6.16 64.39,6.62 64.64,7.46 64.9,8.5 65.16,9.54 65.41,10.38 65.67,10.84 65.93,10.84 66.19,10.38 66.44,9.54 66.7,8.5 66.96,7.46 67.21,6.62 67.47,6.16 67.73,6.16 67.99,6.62 68.24,7.46 68.5,8.5 68.76,9.54 69.01,10.38 69.27,10.84 69.53,10.84 69.79,10.38 70.04,9.54 70.3,8.5 70.56,7.46 70.81,6.62 71.07,6.16 71.33,6.16 71.59,6.62 71.84,7.46 72.1,8.5 72.36,9.54 72.61,10.38 72.87,10.84 73.13,10.84 73.39,10.38 73.64,9.54 73.9,8.5 74.16,7.46 74.41,6.62 74.67,6.16 74.93,6.16 75.19,6.62 75.44,7.46 75.7,8.5 75.96,9.54 76.21,10.38 76.47,10.84 76.73,10.84 76.99,10.38 77.24,9.54 77.5,8.5 77.76,7.46 78.01,6.62 78.27,6.16 78.53,6.16 78.79,6.62 79.04,7.46 79.3,8.5 79.56,9.54 79.81,10.38 80.07,10.84 80.33,10.84 80.59,10.38 80.84,9.54 81.1,8.5" fill="none" stroke="#1E2A4A" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/></g></g><g clip-path="url(#cl2)"><g class="scroll-fast" style="--lam:-3.6px"><polyline points="104.4,8.5 104.66,7.46 104.91,6.62 105.17,6.16 105.43,6.16 105.69,6.62 105.94,7.46 106.2,8.5 106.46,9.54 106.71,10.38 106.97,10.84 107.23,10.84 107.49,10.38 107.74,9.54 108,8.5 108.26,7.46 108.51,6.62 108.77,6.16 109.03,6.16 109.29,6.62 109.54,7.46 109.8,8.5 110.06,9.54 110.31,10.38 110.57,10.84 110.83,10.84 111.09,10.38 111.34,9.54 111.6,8.5 111.86,7.46 112.11,6.62 112.37,6.16 112.63,6.16 112.89,6.62 113.14,7.46 113.4,8.5 113.66,9.54 113.91,10.38 114.17,10.84 114.43,10.84 114.69,10.38 114.94,9.54 115.2,8.5 115.46,7.46 115.71,6.62 115.97,6.16 116.23,6.16 116.49,6.62 116.74,7.46 117,8.5 117.26,9.54 117.51,10.38 117.77,10.84 118.03,10.84 118.29,10.38 118.54,9.54 118.8,8.5 119.06,7.46 119.31,6.62 119.57,6.16 119.83,6.16 120.09,6.62 120.34,7.46 120.6,8.5 120.86,9.54 121.11,10.38 121.37,10.84 121.63,10.84 121.89,10.38 122.14,9.54 122.4,8.5 122.66,7.46 122.91,6.62 123.17,6.16 123.43,6.16 123.69,6.62 123.94,7.46 124.2,8.5 124.46,9.54 124.71,10.38 124.97,10.84 125.23,10.84 125.49,10.38 125.74,9.54 126,8.5 126.26,7.46 126.51,6.62 126.77,6.16 127.03,6.16 127.29,6.62 127.54,7.46 127.8,8.5 128.06,9.54 128.31,10.38 128.57,10.84 128.83,10.84 129.09,10.38 129.34,9.54 129.6,8.5" fill="none" stroke="#1E2A4A" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/></g></g><polyline class="wisp" style="animation-delay:0s" points="58,46 58.46,45.25 58.85,44.5 59.11,43.75 59.2,43 59.11,42.25 58.85,41.5 58.46,40.75 58,40 57.54,39.25 57.15,38.5 56.89,37.75 56.8,37 56.89,36.25 57.15,35.5 57.54,34.75 58,34 58.46,33.25 58.85,32.5 59.11,31.75 59.2,31 59.11,30.25 58.85,29.5 58.46,28.75 58,28" fill="none" stroke="#B3261E" stroke-width=".85" stroke-linecap="round"/><polyline class="wisp" style="animation-delay:0.7s" points="79,46 79.46,45.25 79.85,44.5 80.11,43.75 80.2,43 80.11,42.25 79.85,41.5 79.46,40.75 79,40 78.54,39.25 78.15,38.5 77.89,37.75 77.8,37 77.89,36.25 78.15,35.5 78.54,34.75 79,34 79.46,33.25 79.85,32.5 80.11,31.75 80.2,31 80.11,30.25 79.85,29.5 79.46,28.75 79,28" fill="none" stroke="#B3261E" stroke-width=".85" stroke-linecap="round"/><line class="air" style="animation-delay:0s" x1="91" y1="27.5" x2="105" y2="27.5" stroke="#2F62C8" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="4 3"/><polygon points="107.97,27.5 104.72,29.05 104.72,25.95" fill="#2F62C8"/><line class="air" style="animation-delay:0.25s" x1="91" y1="35.5" x2="105" y2="35.5" stroke="#2F62C8" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="4 3"/><polygon points="107.97,35.5 104.72,37.05 104.72,33.95" fill="#2F62C8"/><line class="air" style="animation-delay:0.5s" x1="91" y1="43.5" x2="105" y2="43.5" stroke="#2F62C8" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="4 3"/><polygon points="107.97,43.5 104.72,45.05 104.72,41.95" fill="#2F62C8"/></svg><div><h3>The composite laminate</h3><p>Then I tested the glass-fibre/epoxy laminate in three ways: slowly, fast, and fast with a jet of compressed air blowing on it. The fast tests broke sooner, mostly because the specimens got hot. Once the air kept the temperature down, the fast tests gave the same fatigue life as the slow ones.</p></div></article>
-      <article class="study"><svg class="icon" viewBox="0 0 137 60" role="img" aria-label="A damage equation plus a neural network, giving a life curve with an uncertainty band" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="14" width="34" height="34" rx="4" fill="#FBECEC" stroke="#B3261E" stroke-width="0.9"/><text x="21" y="28.6" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="10.5" fill="#B3261E" text-anchor="middle">dD</text><line x1="12.5" y1="31.2" x2="29.5" y2="31.2" stroke="#B3261E" stroke-width=".8"/><text x="21" y="42.4" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="10.5" fill="#B3261E" text-anchor="middle">dN</text><path d="M41.8 31H48.2M45 27.8V34.2" stroke="#8C95A8" stroke-width="1.2" stroke-linecap="round"/><path d="M55 21L68 15.5M55 21L68 26.5M55 21L68 35.5M55 21L68 46.5M55 31L68 15.5M55 31L68 26.5M55 31L68 35.5M55 31L68 46.5M55 41L68 15.5M55 41L68 26.5M55 41L68 35.5M55 41L68 46.5M68 15.5L81 26M68 15.5L81 36M68 26.5L81 26M68 26.5L81 36M68 35.5L81 26M68 35.5L81 36M68 46.5L81 26M68 46.5L81 36" stroke="#B9C0CD" stroke-width=".45"/><circle class="node" style="animation-delay:0s" cx="55" cy="21" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><circle class="node" style="animation-delay:0s" cx="55" cy="31" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><circle class="node" style="animation-delay:0s" cx="55" cy="41" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><circle class="node" style="animation-delay:0.5s" cx="68" cy="15.5" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><circle class="node" style="animation-delay:0.5s" cx="68" cy="26.5" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><circle class="node" style="animation-delay:0.5s" cx="68" cy="35.5" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><circle class="node" style="animation-delay:0.5s" cx="68" cy="46.5" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><circle class="node" style="animation-delay:1s" cx="81" cy="26" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><circle class="node" style="animation-delay:1s" cx="81" cy="36" r="2.7" fill="#fff" stroke="#1E2A4A" stroke-width=".85"/><line x1="88" y1="31" x2="96.2" y2="31" stroke="#8C95A8" stroke-width="1.1" stroke-linecap="round"/><polygon points="99.08,31 95.57,32.67 95.57,29.33" fill="#8C95A8"/><path class="uband" d="M 106,14.5 C 114,26 122,33 132.5,38.5 L 132.5,46 C 122,40.5 114,33.5 106,22.5 Z" fill="#D9E2F4"/><path class="draw" pathLength="100" d="M 106,18.5 C 114,30 122,36.8 132.5,42.2" fill="none" stroke="#2F62C8" stroke-width="1.1" stroke-linecap="round"/><polyline points="103,11 103,50 134.5,50" fill="none" stroke="#1E2A4A" stroke-width=".85" stroke-linejoin="round" stroke-linecap="round"/></svg><div><h3>A model that learns from few tests</h3><p>Fatigue tests are expensive, so there is never much data. I built a model that combines the physics of how heat and damage build up with machine learning. It predicts how long a specimen will last from a small number of tests and says how sure it is about each prediction.</p></div></article>
+      <article class="study">
+        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-epoxy.png" width="340" height="255"><img class="gif" src="study-epoxy.gif" width="340" height="255" loading="lazy" decoding="async" alt="Animation: an epoxy specimen without fibres is measured, loaded a million times, and measured again; its stiffness and damping curves against temperature are the same before and after."></picture></figure>
+        <div><h3>The epoxy on its own</h3><p>First I took the epoxy without any fibres and loaded it over and over. When I measured it again afterwards, its stiffness and damping had not changed measurably. How the epoxy behaves depends on temperature and loading rate, not on how many cycles it has been through.</p></div>
+      </article>
+      <article class="study">
+        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-laminate.png" width="340" height="255"><img class="gif" src="study-laminate.gif" width="340" height="255" loading="lazy" decoding="async" alt="Animation: three laminate specimens tested slowly, fast, and fast with cooling air. The fast uncooled one heats up and breaks first; the slow one and the air-cooled one last the same number of load cycles."></picture></figure>
+        <div><h3>The composite laminate</h3><p>Then I tested the glass-fibre/epoxy laminate in three ways: slowly, fast, and fast with a jet of compressed air blowing on it. The fast tests broke sooner, mostly because the specimens got hot. Once the air kept the temperature down, the fast tests gave the same fatigue life as the slow ones.</p></div>
+      </article>
+      <article class="study">
+        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-model.png" width="340" height="255"><img class="gif" src="study-model.gif" width="340" height="255" loading="lazy" decoding="async" alt="Animation: records from a few tests feed a model with a physics part and a machine-learning part; for new tests it predicts the life and shows a likely range around each prediction."></picture></figure>
+        <div><h3>A model that learns from few tests</h3><p>Fatigue tests are expensive, so there is never much data. I built a model that combines the physics of how heat and damage build up with machine learning. It predicts how long a specimen will last from a small number of tests and says how sure it is about each prediction.</p></div>
+      </article>
     </div>
   </section>
 
   <section class="wrap" aria-labelledby="h-why">
-    <h2 id="h-why">Why it matters</h2>
+    <h2 id="h-why"><span class="n">4</span>Why it matters</h2>
     <p>For this laminate, fatigue tests can be run a lot faster without losing accuracy, as long as the temperature rise is kept under control. Shorter test campaigns mean new blade materials can be qualified sooner. The model adds one more lesson: when only a handful of tests are available, a bit of physics goes a long way.</p>
   </section>
 
-  <div class="band" id="defence">
-    <section class="wrap flush" aria-labelledby="h-def">
+  <div class="defence" id="defence">
+    <section class="wrap" aria-labelledby="h-def">
       <h2 id="h-def">The defence</h2>
       <dl>
         <dt>When</dt><dd>Thursday 10 December 2026, 9:00&ndash;12:00 (Danish time)</dd>
         <dt>Where</dt><dd>DTU Lyngby Campus, Building 101, Room M1</dd>
         <dt>Online</dt><dd><a href="https://vault.bitwarden.eu/#/send/6gnQvxtYIk-YWLUFAOVPXg/yeElSeiA7oPN0aztnmn6JQ">Link to join online</a></dd>
         <dt>Supervisors</dt><dd>Prof. Christian Berggreen and Associate Prof. Brian Nyvang Legarth, DTU Civil and Mechanical Engineering</dd>
-        <dt>Assessment committee</dt><dd>Prof. Henrik Stang (DTU), Prof. John P. Dear (Imperial College London) and Prof. Thomas Keller (EPFL)</dd>
+        <dt>Assessment committee</dt><dd>Prof. John P. Dear (Imperial College London), Prof. Thomas Keller (EPFL) and Prof. Henrik Stang (DTU)</dd>
         <dt>Chair</dt><dd>Senior Researcher Jesper Harrild S&oslash;rensen, DTU Civil and Mechanical Engineering</dd>
       </dl>
     </section>
   </div>
 
-  <section class="wrap" aria-labelledby="h-pap">
+  <section class="wrap" aria-labelledby="h-pap" id="papers">
     <h2 id="h-pap">The papers</h2>
     <ol class="papers">
-      <li><a href="https://doi.org/10.1016/j.euromechsol.2025.105641">Effects of high-cycle fatigue on the viscoelastic properties of epoxy resin</a> <span class="ref">European Journal of Mechanics A/Solids 112 (2025) 105641</span></li>
-      <li><a href="https://doi.org/10.1016/j.euromechsol.2026.106312">Self-heating and loading frequency in the high-cycle fatigue of angle-ply glass/epoxy laminates: a temperature-controlled comparison</a> <span class="ref">European Journal of Mechanics A/Solids 121 (2027) 106312</span></li>
-      <li><a href="https://doi.org/10.1016/j.engfracmech.2026.112700">Physics-embedded neural modelling of thermo-mechanical fatigue in fibre composites</a> <span class="ref">Engineering Fracture Mechanics 347 (2026) 112700</span></li>
+      <li><a href="https://doi.org/10.1016/j.euromechsol.2025.105641">Effects of high-cycle fatigue on the viscoelastic properties of epoxy resin</a><span class="ref">European Journal of Mechanics A/Solids 112 (2025) 105641</span></li>
+      <li><a href="https://doi.org/10.1016/j.euromechsol.2026.106312">Self-heating and loading frequency in the high-cycle fatigue of angle-ply glass/epoxy laminates: a temperature-controlled comparison</a><span class="ref">European Journal of Mechanics A/Solids 121 (2027) 106312</span></li>
+      <li><a href="https://doi.org/10.1016/j.engfracmech.2026.112700">Physics-embedded neural modelling of thermo-mechanical fatigue in fibre composites</a><span class="ref">Engineering Fracture Mechanics 347 (2026) 112700</span></li>
     </ol>
   </section>
 </main>
 
 <footer><div class="wrap"><span>Mahdi Tayyebati, 2026 &middot; Visits are counted with <a href="https://www.goatcounter.com/">GoatCounter</a>, without cookies.</span><a href="https://github.com/MahdiTBT/phd-summary">Source on GitHub</a></div></footer>
-<script>
-(function () {
-  var farm = document.querySelector('.farm');
-  var out = document.getElementById('turns');
-  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (still) {
-    document.querySelectorAll('svg').forEach(function (s) { if (s.pauseAnimations) s.pauseAnimations(); });
-    var c = document.querySelector('.counter'); if (c) c.hidden = true;
-    return;
-  }
-  if (!farm || !out || !farm.getCurrentTime) return;
-  setInterval(function () {
-    var n = Math.floor(farm.getCurrentTime() / 5);
-    out.textContent = n.toLocaleString('en-GB');
-  }, 250);
-})();
-</script>
 <script>window.goatcounter = { path: location.pathname || '/' };</script>
 <script data-goatcounter="https://mahdi-phd.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
