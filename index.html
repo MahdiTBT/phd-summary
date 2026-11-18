@@ -6,7 +6,9 @@
 <title>High-Cycle Fatigue of Glass Fibre/Epoxy Composites | Mahdi Tayyebati</title>
 <meta name="description" content="A plain-language summary of the PhD thesis High-Cycle Fatigue of Glass Fibre/Epoxy Composites by Mahdi Tayyebati, Technical University of Denmark.">
 <meta name="author" content="Mahdi Tayyebati">
+<link rel="canonical" href="https://mahditbt.github.io/phd-summary/">
 <meta name="theme-color" content="#990000">
+<meta name="color-scheme" content="only light">
 <meta property="og:type" content="article">
 <meta property="og:title" content="High-Cycle Fatigue of Glass Fibre/Epoxy Composites">
 <meta property="og:description" content="A plain-language summary of my PhD thesis at the Technical University of Denmark. PhD defence on 10 December 2026.">
@@ -14,15 +16,15 @@
 <meta property="og:image" content="https://mahditbt.github.io/phd-summary/preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The title of the thesis above four small drawings: a wind turbine, a blade section, the layers of glass-fibre fabric, and glass fibres held by epoxy.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M14.9 31h2.2l-.5-17h-1.2z' fill='%23990000'/%3E%3Cg fill='%23990000'%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z'/%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z' transform='rotate(120 16 13)'/%3E%3Cpath d='M16 13c-.6-4-.4-8 0-12 .6 4 1.6 8 1.2 11.6z' transform='rotate(240 16 13)'/%3E%3C/g%3E%3Ccircle cx='16' cy='13' r='1.7' fill='%23262626'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M14.9%2031h2.2l-.5-17h-1.2z'%20fill='%23990000'/%3E%3Cg%20fill='%23990000'%3E%3Cpath%20d='M16%2013c-.6-4-.4-8%200-12%20.6%204%201.6%208%201.2%2011.6z'/%3E%3Cpath%20d='M16%2013c-.6-4-.4-8%200-12%20.6%204%201.6%208%201.2%2011.6z'%20transform='rotate(120%2016%2013)'/%3E%3Cpath%20d='M16%2013c-.6-4-.4-8%200-12%20.6%204%201.6%208%201.2%2011.6z'%20transform='rotate(240%2016%2013)'/%3E%3C/g%3E%3Ccircle%20cx='16'%20cy='13'%20r='1.7'%20fill='%23262626'/%3E%3C/svg%3E">
 <style>
 :root {
   /* The colours of the animations (the defence deck's palette) and DTU red for the frame of the page. */
   --dtu: #990000;
   --ink: #262626;
   --grey: #595959;
-  --muted: #8C8C8C;
   --rule: #D9D9D9;
   --panel: #F4F4F4;
   --navy: #171748;
@@ -37,29 +39,36 @@ a:focus-visible { outline: 2px solid var(--dtu); outline-offset: 2px; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
 .bar { background: var(--dtu); color: #fff; font-size: .86rem; letter-spacing: .01em; }
 .bar .wrap { padding-top: 11px; padding-bottom: 11px; }
-header.title { padding: 46px 0 6px; }
+header.title { padding: 0 0 6px; }
+header.title > .wrap { padding-top: 46px; }
 h1 { font-size: clamp(2rem, 1.3rem + 2.9vw, 3.05rem); line-height: 1.1; font-weight: 700; letter-spacing: -.01em;
      margin: 0 0 14px; }
 @media (min-width: 761px) { h1 .nw { white-space: nowrap; } }
-.lede { font-size: 1.18rem; line-height: 1.5; color: var(--grey); margin: 0 0 22px; max-width: 46ch; }
+.lede { font-size: 1.18rem; line-height: 1.5; color: var(--grey); margin: 0 0 22px; max-width: 46ch;
+        text-wrap: balance; }
 .author { margin: 0; padding-left: 14px; border-left: 3px solid var(--dtu); line-height: 1.5; }
 .author b { font-size: 1.06rem; }
 .author span { color: var(--grey); font-size: .95rem; }
 .hero { max-width: 1040px; margin: 34px auto 0; padding: 0 20px; }
 section.wrap { padding-top: 62px; }
-h2 { font-size: clamp(1.45rem, 1.15rem + 1.1vw, 1.9rem); line-height: 1.2; font-weight: 700; margin: 0 0 14px; }
-h2 .n { color: var(--dtu); margin-right: .45em; }
+h2 { font-size: clamp(1.45rem, 1.15rem + 1.1vw, 1.9rem); line-height: 1.2; font-weight: 700; margin: 0 0 14px;
+     text-wrap: balance; }
+/* the section number hangs in the margin: wrapped lines start under the words, not under the number */
+h2:has(.n) { padding-left: 1.15em; text-indent: -1.15em; }
+h2 .n { display: inline-block; min-width: .87em; color: var(--dtu); text-indent: 0; }
 h3 { font-size: 1.14rem; font-weight: 700; margin: 0 0 6px; }
-p { margin: 0 0 14px; max-width: 66ch; }
+p { margin: 0 0 14px; max-width: 62ch; }
+p, figcaption, dd, .papers li { text-wrap: pretty; }
 figure { margin: 0; }
 picture { display: block; }
 .gif { display: block; width: 100%; height: auto; }
 figcaption { font-size: .9rem; line-height: 1.5; color: var(--grey); margin-top: 8px; max-width: 74ch; }
 figcaption b { color: var(--ink); }
-.split { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 40px; align-items: center; }
+.split { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 40px; align-items: start; }
 .split > *, .duo > *, .study > * { min-width: 0; }
 .wide { margin-top: 30px; }
-.duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; margin-top: 22px; }
+.duo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 26px; margin-top: 22px;
+       max-width: 880px; }
 .study { display: grid; grid-template-columns: 340px minmax(0, 1fr); gap: 34px; align-items: center;
          padding: 22px 0; border-top: 1px solid var(--rule); }
 .study:last-child { border-bottom: 1px solid var(--rule); }
@@ -68,41 +77,57 @@ figcaption b { color: var(--ink); }
 .defence { background: var(--panel); margin-top: 64px; padding: 4px 0 48px; border-top: 3px solid var(--dtu); }
 dl { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 9px 24px; margin: 4px 0 0; }
 dt { font-weight: 700; }
-dd { margin: 0; }
+dd { margin: 0; max-width: 62ch; }
 .papers { margin: 4px 0 0; padding-left: 1.3em; max-width: 76ch; }
 .papers li { margin-bottom: 12px; padding-left: .2em; }
 .papers .ref { display: block; color: var(--grey); font-size: .93rem; }
 footer { margin-top: 56px; border-top: 1px solid var(--rule); padding: 22px 0 40px; color: var(--grey);
          font-size: .88rem; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+@media (min-width: 1000px) {
+  .study { grid-template-columns: 380px minmax(0, 1fr); }
+}
+@media (max-width: 900px) {
+  .split { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .split figure { max-width: 540px; }
+}
 @media (max-width: 760px) {
   body { font-size: 16.5px; }
-  header.title { padding-top: 32px; }
-  .split, .duo { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-  .study { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  header.title > .wrap { padding-top: 32px; }
+  .duo { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  /* on a phone each study reads heading, picture, text */
+  .study { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .study > div { display: contents; }
+  .study h3 { order: -1; margin: 0; }
   .study figure { max-width: 420px; }
   dl { grid-template-columns: minmax(0, 1fr); gap: 0; }
   dd { margin-bottom: 12px; }
+  dd:last-child { margin-bottom: 0; }
   section.wrap { padding-top: 46px; }
 }
 @media (max-width: 600px) {
-  /* the pictures run edge to edge on a phone: they are white-backed, so only the text inside them grows */
-  .bleed { margin-left: -20px; margin-right: -20px; }
-  .bleed figcaption { padding: 0 20px; }
-  .hero { padding: 0; margin-top: 26px; }
+  /* the pictures run almost edge to edge on a phone, so the text inside them stays readable */
+  .bleed { margin-left: -12px; margin-right: -12px; }
+  .bleed figcaption { padding: 0 12px; }
+  .hero { padding: 0 8px; margin-top: 26px; }
+}
+@media print {
+  .bar { background: none; color: var(--ink); padding: 0; }
+  h2, h3 { break-after: avoid; }
+  figure, .study { break-inside: avoid; }
 }
 </style>
 </head>
 <body>
-<div class="bar"><div class="wrap">PhD thesis &middot; Technical University of Denmark</div></div>
 <header class="title">
+  <div class="bar"><div class="wrap">PhD thesis &middot; Technical University of Denmark</div></div>
   <div class="wrap">
     <h1>High-Cycle Fatigue of <span class="nw">Glass Fibre/Epoxy Composites</span></h1>
-    <p class="lede">A plain-language summary of my PhD thesis.</p>
+    <p class="lede">A plain-language summary of my PhD thesis, which I defend at DTU on <a href="#defence">Thursday 10&nbsp;December 2026</a>.</p>
     <p class="author"><b>Mahdi Tayyebati</b><br><span>DTU Wind and Energy Systems &middot; DTU Civil and Mechanical Engineering</span></p>
   </div>
   <figure class="hero">
-    <picture><source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="hero-tall.png" width="460" height="440"><source media="(prefers-reduced-motion: reduce)" srcset="hero-wide.png" width="1000" height="270"><source media="(max-width: 600px)" srcset="hero-tall.gif" width="460" height="440"><img class="gif" src="hero-wide.gif" width="1000" height="270" decoding="async" alt="From the turbine to the material: a wind turbine whose rotor turns, the cross-section of a blade, the layers of glass-fibre fabric in the laminate, and glass fibres held together by epoxy."></picture>
+    <picture><source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="hero-tall.png" width="460" height="440"><source media="(prefers-reduced-motion: reduce)" srcset="hero-wide.png" width="1000" height="270"><source media="(max-width: 600px)" srcset="hero-tall.gif" width="460" height="440"><img class="gif" src="hero-wide.gif" width="1000" height="270" fetchpriority="high" decoding="async" alt="From the turbine to the material: a wind turbine whose rotor turns, the cross-section of a blade, the layers of glass-fibre fabric in the laminate, and glass fibres held together by epoxy."></picture>
   </figure>
 </header>
 
@@ -110,62 +135,62 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="wrap" aria-labelledby="h-blade">
     <div class="split">
       <div>
-        <h2 id="h-blade"><span class="n">1</span>A blade bends a hundred million times</h2>
-        <p>A wind-turbine blade is made of a composite: thin glass fibres held together by epoxy. Every turn of the rotor bends the blade a little, and over a working life of around 25 years that adds up to somewhere between millions and billions of load cycles. Each one is far too small to break anything. Together they slowly wear the material down. Engineers call this fatigue.</p>
+        <h2 id="h-blade"><span class="n">1</span> A blade bends a hundred million times</h2>
+        <p>A wind-turbine blade is made mostly of a composite: thin glass fibres held together by epoxy. Every turn of the rotor bends the blade a little, and over a working life of about 25 years that adds up to around a hundred million load cycles. Each one is far too small to break anything. Together they slowly wear the material down. Engineers call this fatigue.</p>
       </div>
       <figure class="bleed">
-        <picture><source media="(prefers-reduced-motion: reduce)" srcset="turbine-load-cycles.png" width="540" height="396"><img class="gif" src="turbine-load-cycles.gif" width="540" height="396" decoding="async" alt="Animation: as the rotor turns, the weight of one blade loads its root up and down once per turn; the load at the blade root traces a wave, and the cycle count runs from 0 to about a hundred million over 25 years."></picture>
+        <picture><source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="turbine-load-cycles-phone.png" width="460" height="594"><source media="(prefers-reduced-motion: reduce)" srcset="turbine-load-cycles.png" width="540" height="396"><source media="(max-width: 600px)" srcset="turbine-load-cycles-phone.gif" width="460" height="594"><img class="gif" src="turbine-load-cycles.gif" width="540" height="396" loading="lazy" decoding="async" alt="Animation: as the rotor turns, the weight of one blade loads its root up and down once per turn; the load at the blade root traces a wave, and the cycle count runs from 0 to about a hundred million over 25 years."></picture>
         <figcaption><b>Figure 1.</b> One turn of the rotor, one load cycle at the root of the blade.</figcaption>
       </figure>
     </div>
     <figure class="wide bleed">
-      <picture><source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="fatigue-damage-phone.png" width="460" height="682"><source media="(prefers-reduced-motion: reduce)" srcset="fatigue-damage.png" width="1000" height="392"><source media="(max-width: 600px)" srcset="fatigue-damage-phone.gif" width="460" height="682"><img class="gif" src="fatigue-damage.gif" width="1000" height="392" loading="lazy" decoding="async" alt="Animation: a glass-fibre/epoxy laminate under repeated tension. Cracks form along the fibres of each layer, open the interface between fibre and epoxy, the layers separate, and the specimen breaks. Beside it, its stiffness falls in three stages."></picture>
-      <figcaption><b>Figure 2.</b> Inside the laminate, fatigue starts with tiny cracks along the fibres. The layers then begin to separate, the material gets softer, and at some point the specimen breaks.</figcaption>
+      <picture><source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="fatigue-damage-phone.png" width="460" height="671"><source media="(prefers-reduced-motion: reduce)" srcset="fatigue-damage.png" width="1000" height="392"><source media="(max-width: 600px)" srcset="fatigue-damage-phone.gif" width="460" height="671"><img class="gif" src="fatigue-damage.gif" width="1000" height="392" loading="lazy" decoding="async" alt="Animation: a glass-fibre/epoxy laminate under repeated tension. Tiny cracks form along the fibres, open the bond between fibre and epoxy, the layers start to separate, and the specimen breaks. Beside it, its stiffness falls in three stages."></picture>
+      <figcaption><b>Figure 2.</b> Inside the laminate, fatigue starts with tiny cracks along the fibres. As they multiply and the layers begin to separate, the material gets softer, until the specimen breaks.</figcaption>
     </figure>
   </section>
 
   <section class="wrap" aria-labelledby="h-time">
-    <h2 id="h-time"><span class="n">2</span>Testing takes time</h2>
-    <p>Before a material goes into a blade, it has to be fatigue tested in the lab, and pushing a specimen through that many cycles takes weeks or months. The obvious shortcut is to load it faster. But epoxy turns part of every cycle into heat, so a fast test also warms the specimen up, and a warm specimen does not behave like a cool one. Can a fast test still be trusted?</p>
+    <h2 id="h-time"><span class="n">2</span> Testing takes time</h2>
+    <p>Before a material goes into a blade, it has to be fatigue tested in the lab, and a full test campaign takes weeks or months. The obvious shortcut is to load it faster. But epoxy turns part of the energy of every load cycle into heat, so a fast test also warms the specimen up, and a warm specimen does not behave like a cool one. Can a fast test still be trusted?</p>
     <figure class="bleed">
       <div class="duo">
         <picture><source media="(prefers-reduced-motion: reduce)" srcset="test-slow.png" width="487" height="376"><img class="gif" src="test-slow.gif" width="487" height="376" loading="lazy" decoding="async" alt="Animation: a specimen in a test machine is loaded slowly; the load wave is slow and a calendar counts the days up to three weeks."></picture>
         <picture><source media="(prefers-reduced-motion: reduce)" srcset="test-fast.png" width="487" height="376"><img class="gif" src="test-fast.gif" width="487" height="376" loading="lazy" decoding="async" alt="Animation: the same test run faster; the load wave is faster, the specimen turns warm, heat rises from it and the thermometer climbs."></picture>
       </div>
-      <figcaption><b>Figure 3.</b> A slow test ties up the machine for weeks. Load faster and the specimen heats up.</figcaption>
+      <figcaption><b>Figure 3.</b> Slow testing ties up the machine for weeks. Load faster and the specimen heats up.</figcaption>
     </figure>
   </section>
 
   <section class="wrap" aria-labelledby="h-did">
-    <h2 id="h-did"><span class="n">3</span>What I did</h2>
+    <h2 id="h-did"><span class="n">3</span> What I did</h2>
     <div class="studies">
       <article class="study">
-        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-epoxy.png" width="340" height="255"><img class="gif" src="study-epoxy.gif" width="340" height="255" loading="lazy" decoding="async" alt="Animation: an epoxy specimen without fibres is measured, loaded a million times, and measured again; its stiffness and damping curves against temperature are the same before and after."></picture></figure>
-        <div><h3>The epoxy on its own</h3><p>First I took the epoxy without any fibres and loaded it over and over. When I measured it again afterwards, its stiffness and damping had not changed measurably. How the epoxy behaves depends on temperature and loading rate, not on how many cycles it has been through.</p></div>
+        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-epoxy.png" width="380" height="285"><img class="gif" src="study-epoxy.gif" width="380" height="285" loading="lazy" decoding="async" alt="Animation: fresh epoxy without fibres is measured, then epoxy that has been loaded a million times; their stiffness and damping curves against temperature are the same."></picture></figure>
+        <div><h3>The epoxy on its own</h3><p>First I took the epoxy without any fibres and loaded it over and over. Compared with fresh, unloaded epoxy, its stiffness and damping had not changed measurably. They depend on temperature and loading rate, not on how many cycles the epoxy has been through.</p></div>
       </article>
       <article class="study">
-        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-laminate.png" width="340" height="255"><img class="gif" src="study-laminate.gif" width="340" height="255" loading="lazy" decoding="async" alt="Animation: three laminate specimens tested slowly, fast, and fast with cooling air. The fast uncooled one heats up and breaks first; the slow one and the air-cooled one last the same number of load cycles."></picture></figure>
-        <div><h3>The composite laminate</h3><p>Then I tested the glass-fibre/epoxy laminate in three ways: slowly, fast, and fast with a jet of compressed air blowing on it. The fast tests broke sooner, mostly because the specimens got hot. Once the air kept the temperature down, the fast tests gave the same fatigue life as the slow ones.</p></div>
+        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-laminate.png" width="380" height="285"><img class="gif" src="study-laminate.gif" width="380" height="285" loading="lazy" decoding="async" alt="Animation: three laminate specimens tested slowly, fast, and fast with cooling air. The fast uncooled one heats up and breaks first; the slow one and the air-cooled one last the same number of load cycles."></picture></figure>
+        <div><h3>The composite laminate</h3><p>Then I tested the glass-fibre/epoxy laminate in three ways: slowly, fast, and fast with a jet of compressed air blowing on it. Without the air, the fast tests broke after fewer cycles, mostly because the specimens got hot. Once the air kept the temperature down, the fast tests gave the same fatigue life as the slow ones.</p></div>
       </article>
       <article class="study">
-        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-model.png" width="340" height="255"><img class="gif" src="study-model.gif" width="340" height="255" loading="lazy" decoding="async" alt="Animation: records from a few tests feed a model with a physics part and a machine-learning part; for new tests it predicts the life and shows a likely range around each prediction."></picture></figure>
-        <div><h3>A model that learns from few tests</h3><p>Fatigue tests are expensive, so there is never much data. I built a model that combines the physics of how heat and damage build up with machine learning. It predicts how long a specimen will last from a small number of tests and says how sure it is about each prediction.</p></div>
+        <figure class="bleed"><picture><source media="(prefers-reduced-motion: reduce)" srcset="study-model.png" width="380" height="285"><img class="gif" src="study-model.gif" width="380" height="285" loading="lazy" decoding="async" alt="Animation: records from a few tests feed a model with a physics part and a machine-learning part; for new tests it predicts the life and shows a likely range around each prediction."></picture></figure>
+        <div><h3>A model that learns from few tests</h3><p>Fatigue tests are expensive, so there is rarely much data. I built a model that combines the physics of how heat and damage build up with machine learning. It predicts how long a specimen will last from a small number of tests and, for conditions like the ones it learned from, says how sure it is about each prediction.</p></div>
       </article>
     </div>
   </section>
 
   <section class="wrap" aria-labelledby="h-why">
-    <h2 id="h-why"><span class="n">4</span>Why it matters</h2>
-    <p>For this laminate, fatigue tests can be run a lot faster without losing accuracy, as long as the temperature rise is kept under control. Shorter test campaigns mean new blade materials can be qualified sooner. The model adds one more lesson: when only a handful of tests are available, a bit of physics goes a long way.</p>
+    <h2 id="h-why"><span class="n">4</span> Why it matters</h2>
+    <p>For this laminate, fatigue tests can be run a lot faster without losing accuracy, as long as the temperature rise is kept under control. Shorter test campaigns could help new blade materials get qualified sooner. The model adds one more lesson: when only a few dozen tests are available, a bit of physics goes a long way.</p>
   </section>
 
   <div class="defence" id="defence">
     <section class="wrap" aria-labelledby="h-def">
       <h2 id="h-def">The defence</h2>
       <dl>
-        <dt>When</dt><dd>Thursday 10 December 2026, 9:00&ndash;12:00 (Danish time)</dd>
+        <dt>When</dt><dd>Thursday 10 December 2026, 9:00&ndash;12:00 (Danish time)<br><a href="phd-defence.ics">Add to calendar</a></dd>
         <dt>Where</dt><dd>DTU Lyngby Campus, Building 101, Room M1</dd>
-        <dt>Online</dt><dd><a href="https://vault.bitwarden.eu/#/send/6gnQvxtYIk-YWLUFAOVPXg/yeElSeiA7oPN0aztnmn6JQ">Link to join online</a></dd>
+        <dt>Online</dt><dd><a href="https://vault.bitwarden.eu/#/send/6gnQvxtYIk-YWLUFAOVPXg/yeElSeiA7oPN0aztnmn6JQ">Join online</a></dd>
         <dt>Supervisors</dt><dd>Prof. Christian Berggreen and Associate Prof. Brian Nyvang Legarth, DTU Civil and Mechanical Engineering</dd>
         <dt>Assessment committee</dt><dd>Prof. John P. Dear (Imperial College London), Prof. Thomas Keller (EPFL) and Prof. Henrik Stang (DTU)</dd>
         <dt>Chair</dt><dd>Senior Researcher Jesper Harrild S&oslash;rensen, DTU Civil and Mechanical Engineering</dd>
@@ -178,7 +203,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <ol class="papers">
       <li><a href="https://doi.org/10.1016/j.euromechsol.2025.105641">Effects of high-cycle fatigue on the viscoelastic properties of epoxy resin</a><span class="ref">European Journal of Mechanics A/Solids 112 (2025) 105641</span></li>
       <li><a href="https://doi.org/10.1016/j.euromechsol.2026.106312">Self-heating and loading frequency in the high-cycle fatigue of angle-ply glass/epoxy laminates: a temperature-controlled comparison</a><span class="ref">European Journal of Mechanics A/Solids 121 (2027) 106312</span></li>
-      <li><a href="https://doi.org/10.1016/j.engfracmech.2026.112700">Physics-embedded neural modelling of thermo-mechanical fatigue in fibre composites</a><span class="ref">Engineering Fracture Mechanics 347 (2026) 112700</span></li>
+      <li><a href="https://doi.org/10.1016/j.engfracmech.2026.112700">Physics-embedded neural modelling of thermo-mechanical fatigue in fibre composites: Interpretable parameters and uncertainty-quantified life</a><span class="ref">Engineering Fracture Mechanics 347 (2026) 112700</span></li>
     </ol>
   </section>
 </main>
